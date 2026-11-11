@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+/* Dark mode is toggled with a `dark` class on <html> (see theme-context.tsx). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --font-sans: var(--font-geist-sans), var(--font-sinhala), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  /* Semantic colours. Their values change with the theme below. */
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-night: var(--night);
+  --color-ink-900: var(--ink-900);
+  --color-ink-700: var(--ink-700);
+  --color-ink-500: var(--ink-500);
+  --color-ink-300: var(--ink-300);
+  --color-ink-100: var(--ink-100);
+}
+
+/* Brand scale is fixed in both themes; dark mode uses explicit dark: variants for tints. */
+@theme {
+  --color-brand-50: #fff7ed;
+  --color-brand-100: #ffedd5;
+  --color-brand-200: #fed7aa;
+  --color-brand-300: #fdba74;
+  --color-brand-400: #fb923c;
+  --color-brand-500: #f97316;
+  --color-brand-600: #ea580c;
+  --color-brand-700: #c2410c;
+  --color-brand-800: #9a3412;
+  --color-brand-900: #7c2d12;
+  --color-brand-950: #431407;
+}
+
+/* canvas = page background, surface = cards/inputs. Cards sit visibly above the page. */
+:root {
+  --canvas: #f3f5f9;
+  --surface: #ffffff;
+  --night: #0f172a;
+  --ink-900: #0f172a;
+  --ink-700: #334155;
+  --ink-500: #64748b;
+  --ink-300: #cbd5e1;
+  --ink-100: #f1f5f9;
+  color-scheme: light;
+}
+
+:root.dark {
+  --canvas: #070c18;
+  --surface: #111a2c;
+  --night: #020617;
+  --ink-900: #f1f5f9;
+  --ink-700: #cbd5e1;
+  --ink-500: #94a3b8;
+  --ink-300: #334155;
+  --ink-100: #1e293b;
+  color-scheme: dark;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-canvas text-ink-900 antialiased;
+  }
+
+  /* Sinhala script needs more vertical room than Latin. */
+  :lang(si) {
+    line-height: 1.75;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-500;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-brand-600 px-5 py-3 text-sm font-semibold text-white shadow-sm shadow-brand-600/20 transition hover:bg-brand-700 active:scale-[0.98] disabled:cursor-not-allowed disabled:bg-ink-300 disabled:text-ink-500 disabled:shadow-none;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-ink-300 bg-surface px-5 py-3 text-sm font-semibold text-ink-900 transition hover:border-ink-500 hover:bg-ink-100 active:scale-[0.98];
+  }
+
+  .input {
+    @apply w-full rounded-xl border border-ink-300 bg-surface px-4 py-2.5 text-sm text-ink-900 placeholder:text-ink-500 transition focus:border-brand-500 focus:outline-none focus:ring-4 focus:ring-brand-100 dark:focus:ring-brand-950;
+  }
+
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-ink-700;
+  }
+
+  .card {
+    @apply rounded-2xl border border-ink-100 bg-surface shadow-sm;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

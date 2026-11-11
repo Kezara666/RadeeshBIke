@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="LED Tail Light (sample image)">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fef08a"/>
+      <stop offset="1" stop-color="#fefce8"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <circle cx="650" cy="90" r="120" fill="#ffffff" opacity="0.35"/>
+  <g transform="translate(300 40) scale(1)">
+    <g transform="translate(0 0)"><circle cx="100" cy="100" r="34" fill="#a16207"/><line x1="150" y1="100" x2="172" y2="100" stroke="#a16207" stroke-width="10" stroke-linecap="round"/><line x1="135.35533905932738" y1="135.35533905932738" x2="150.91168824543144" y2="150.91168824543144" stroke="#a16207" stroke-width="10" stroke-linecap="round"/><line x1="100" y1="150" x2="100" y2="172" stroke="#a16207" stroke-width="10" stroke-linecap="round"/><line x1="64.64466094067262" y1="135.35533905932738" x2="49.08831175456858" y2="150.91168824543144" stroke="#a16207" stroke-width="10" stroke-linecap="round"/><line x1="50" y1="100" x2="28" y2="100.00000000000001" stroke="#a16207" stroke-width="10" stroke-linecap="round"/><line x1="64.64466094067262" y1="64.64466094067262" x2="49.088311754568565" y2="49.08831175456858" stroke="#a16207" stroke-width="10" stroke-linecap="round"/><line x1="99.99999999999999" y1="50" x2="99.99999999999999" y2="28" stroke="#a16207" stroke-width="10" stroke-linecap="round"/><line x1="135.35533905932738" y1="64.64466094067262" x2="150.9116882454314" y2="49.088311754568565" stroke="#a16207" stroke-width="10" stroke-linecap="round"/></g>
+  </g>
+  <text x="400" y="430" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700" fill="#0f172a">LED Tail Light</text>
+  <rect x="290" y="454" width="220" height="2" fill="#a16207" opacity="0.4"/>
+  <text x="400" y="575" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" letter-spacing="4" fill="#475569">SAMPLE IMAGE</text>
+</svg>
